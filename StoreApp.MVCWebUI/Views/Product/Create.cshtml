@@ -1,0 +1,104 @@
+﻿@using StoreApp.Entity
+@model Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h3>Product Edit</h3>
+
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">@Html.DisplayNameFor(s => s.Name)</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(s => s.Name, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">@Html.DisplayNameFor(s => s.Description)</label>
+        <div class="col-sm-10">
+            @Html.TextAreaFor(s => s.Description, new { @class = "form-control", @cols = 10, @rows = 10 })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">@Html.DisplayNameFor(s => s.Price)</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(s => s.Price, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">@Html.DisplayNameFor(s => s.Stock)</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(s => s.Stock, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">@Html.DisplayNameFor(s => s.Image)</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(s => s.Image, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">@Html.DisplayNameFor(s => s.CategoryId)</label>
+        <div class="col-sm-10">
+            @Html.DropDownListFor(s => s.CategoryId, ViewBag.Categories as SelectList, "--Seçim Yapınız--", new { @class = "form-control custom-select" })
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(s => s.isApproved) @Html.DisplayNameFor(s => s.isApproved)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(s => s.isFeatured) @Html.DisplayNameFor(s => s.isFeatured)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(s => s.isHome) @Html.DisplayNameFor(s => s.isHome)
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    </div>
+}
+

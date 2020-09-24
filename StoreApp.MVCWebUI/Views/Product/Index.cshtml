@@ -1,0 +1,106 @@
+﻿@using StoreApp.Entity
+@model IEnumerable<Product>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Ürün Listesi</h3>
+
+
+
+@if (TempData["Updated"] != null)
+{
+    string urun = TempData["Updated"].ToString();
+
+
+<div class="alert alert-success" role="alert">
+    <span class="glyphicon glyphicon-ok"></span>
+    <b> @urun ismindeki kayıt güncellendi</b>
+</div>
+}
+
+
+<hr />
+
+<a href="/Product/Create" class="btn btn-primary">
+
+    <span class="glyphicon glyphicon-plus"> Ürün Ekle</span>
+</a>
+<br />
+<br />
+
+
+<table class="table table-condensed table-bordered table-striped table-hover">
+    <thead>
+
+        <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>isApproved</th>
+            <th>isHome</th>
+            <th>isFeatured</th>
+            <th></th>
+        </tr>
+
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>
+                    <img src="~/images/tn/@p.Image" width="120" alt="@p.Name" class="img-responsive"  />
+                </td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>
+                    @if (p.isApproved == true)
+                    {
+                        <span class="label label-success">Onaylı</span>
+                    }
+                    else
+                    {
+                        <span class="label label-warning">Onay Bekliyor</span>
+                    }
+                </td>
+                <td>
+                    @if (p.isHome == true)
+                    {
+                        <span class="label label-success">Ana Sayfa</span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">Ana Sayfa Değil</span>
+                    }
+                </td>
+                <td>
+                    @if (p.isFeatured == true)
+                    {
+                        <span class="label label-success">Popüler Ürün</span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">Popüler Ürün Değil</span>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Product", new { @id = p.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                    @Html.ActionLink("Delete", "Delete", "Product", new { @id = p.Id }, new { @class = "btn btn-danger btn-xs" })
+
+                </td>
+
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
+

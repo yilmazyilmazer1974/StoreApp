@@ -1,0 +1,330 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F6A3A85-4393-4CF6-B3E9-F4B6F6DCD0D5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StoreApp.MVCWebUI</RootNamespace>
+    <AssemblyName>StoreApp.MVCWebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44324</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="edura\404.html" />
+    <Content Include="edura\about-us.html" />
+    <Content Include="edura\blog-grid-2cl.html" />
+    <Content Include="edura\blog-grid-3cl.html" />
+    <Content Include="edura\blog-list.html" />
+    <Content Include="edura\blog-single.html" />
+    <Content Include="edura\contactus-1.html" />
+    <Content Include="edura\contactus-2.html" />
+    <Content Include="edura\contactus-3.html" />
+    <Content Include="edura\contactus-4.html" />
+    <Content Include="edura\custom.css" />
+    <Content Include="edura\demo\demo.css" />
+    <Content Include="edura\demo\demo.js" />
+    <Content Include="edura\edura.js" />
+    <Content Include="edura\elements.html" />
+    <Content Include="edura\faq.html" />
+    <Content Include="edura\gmap.js" />
+    <Content Include="edura\grid-system.html" />
+    <Content Include="edura\images\blog\blog1.jpg" />
+    <Content Include="edura\images\blog\blog2.jpg" />
+    <Content Include="edura\images\blog\blog3.jpg" />
+    <Content Include="edura\images\blog\blog4.jpg" />
+    <Content Include="edura\images\blog\blog5.jpg" />
+    <Content Include="edura\images\edura-logo.png" />
+    <Content Include="edura\images\favicon.png" />
+    <Content Include="edura\images\other\corporate.jpg" />
+    <Content Include="edura\images\other\support.jpg" />
+    <Content Include="edura\images\partners\dribbble.png" />
+    <Content Include="edura\images\partners\pinterest.png" />
+    <Content Include="edura\images\partners\wordpress.png" />
+    <Content Include="edura\images\portfolio\portfolio1.jpg" />
+    <Content Include="edura\images\portfolio\portfolio2.jpg" />
+    <Content Include="edura\images\portfolio\portfolio3.jpg" />
+    <Content Include="edura\images\portfolio\portfolio4.jpg" />
+    <Content Include="edura\images\portfolio\portfolio5.jpg" />
+    <Content Include="edura\images\portfolio\portfolio6.jpg" />
+    <Content Include="edura\images\products\product1.jpg" />
+    <Content Include="edura\images\products\product1_thumb.jpg" />
+    <Content Include="edura\images\products\product2_thumb.jpg" />
+    <Content Include="edura\images\products\product3.jpg" />
+    <Content Include="edura\images\products\product3_thumb.jpg" />
+    <Content Include="edura\images\products\product4.jpg" />
+    <Content Include="edura\images\products\product4_thumb.jpg" />
+    <Content Include="edura\images\slides\slide10.jpg" />
+    <Content Include="edura\images\slides\slide11.jpg" />
+    <Content Include="edura\images\slides\slide3.jpg" />
+    <Content Include="edura\images\team\thumb1.jpg" />
+    <Content Include="edura\images\team\thumb1_40.jpg" />
+    <Content Include="edura\images\team\thumb3_40.jpg" />
+    <Content Include="edura\images\team\thumb4_40.jpg" />
+    <Content Include="edura\images\team\thumb5_40.jpg" />
+    <Content Include="edura\images\team\thumb6.jpg" />
+    <Content Include="edura\images\team\thumb7.jpg" />
+    <Content Include="edura\images\team\thumb8.jpg" />
+    <Content Include="edura\images\team\thumb8_40.jpg" />
+    <Content Include="edura\index-2.html" />
+    <Content Include="edura\index-3.html" />
+    <Content Include="edura\index-4.html" />
+    <Content Include="edura\index-5.html" />
+    <Content Include="edura\index-6.html" />
+    <Content Include="edura\index.html" />
+    <Content Include="edura\portfolio-2cl.html" />
+    <Content Include="edura\portfolio-3cl.html" />
+    <Content Include="edura\portfolio-4cl.html" />
+    <Content Include="edura\portfolio-single.html" />
+    <Content Include="edura\pricing.html" />
+    <Content Include="edura\services.html" />
+    <Content Include="edura\shop-cart.html" />
+    <Content Include="edura\shop-catalog-sidebar-left.html" />
+    <Content Include="edura\shop-catalog-sidebar-right.html" />
+    <Content Include="edura\shop-catalog.html" />
+    <Content Include="edura\shop-product-sidebar-left.html" />
+    <Content Include="edura\shop-product-sidebar-right.html" />
+    <Content Include="edura\shop-product.html" />
+    <Content Include="edura\style.css" />
+    <Content Include="edura\styles\lunar.css" />
+    <Content Include="edura\typography.html" />
+    <Content Include="edura\vendor\animate\animate.css" />
+    <Content Include="edura\vendor\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="edura\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="edura\vendor\bootstrap\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="edura\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="edura\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="edura\vendor\counterup\jquery.counterup.min.js" />
+    <Content Include="edura\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="edura\vendor\font-awesome\fonts\fontawesome-webfont5b62.html" />
+    <Content Include="edura\vendor\font-awesome\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="edura\vendor\hero-slider\assets\cd-icon-navigation.svg" />
+    <Content Include="edura\vendor\hero-slider\css\style.css" />
+    <Content Include="edura\vendor\hero-slider\js\main.js" />
+    <Content Include="edura\vendor\hero-slider\js\modernizr.js" />
+    <Content Include="edura\vendor\imagesloaded\imagesloaded.pkgd.min.js" />
+    <Content Include="edura\vendor\jquery\jquery.filterizr.js" />
+    <Content Include="edura\vendor\jquery\jquery.min.js" />
+    <Content Include="edura\vendor\owl-carousel\AjaxLoader.gif" />
+    <Content Include="edura\vendor\owl-carousel\grabbing.png" />
+    <Content Include="edura\vendor\owl-carousel\owl.carousel.css" />
+    <Content Include="edura\vendor\owl-carousel\owl.carousel.js" />
+    <Content Include="edura\vendor\owl-carousel\owl.theme.css" />
+    <Content Include="edura\vendor\owl-carousel\owl.transitions.css" />
+    <Content Include="edura\vendor\SmoothScroll\SmoothScroll.min.js" />
+    <Content Include="edura\vendor\waypoints\waypoints.min.js" />
+    <Content Include="edura\vendor\wow\wow.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\tn\1.jpg" />
+    <Content Include="images\tn\2.jpg" />
+    <Content Include="images\tn\3.jpg" />
+    <Content Include="images\tn\4.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="edura\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="edura\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="edura\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="edura\vendor\bootstrap\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="edura\vendor\font-awesome\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="edura\vendor\font-awesome\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="edura\vendor\font-awesome\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="edura\vendor\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StoreApp.Business\StoreApp.Business.csproj">
+      <Project>{E67D6C90-428B-4016-BD1F-7EF7C621CD5A}</Project>
+      <Name>StoreApp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StoreApp.Entity\StoreApp.Entity.csproj">
+      <Project>{C9140B82-643B-4151-AA52-7DDFEC42ADC7}</Project>
+      <Name>StoreApp.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52102</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44324/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
