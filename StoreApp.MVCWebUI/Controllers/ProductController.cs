@@ -32,6 +32,16 @@ namespace StoreApp.MVCWebUI.Controllers
             return View(products);
         }
 
+
+
+
+        public ActionResult List()
+        {
+            var products = _productManager.GetAll().Where(i=>i.isApproved==true).OrderByDescending(i=>i.Date).ToList();
+
+            return View(products);
+        }
+
         
         public ActionResult Details(int id)
         {
@@ -54,7 +64,7 @@ namespace StoreApp.MVCWebUI.Controllers
 
             try
             {
-                
+                ViewBag.Categories = new SelectList(_categoryManager.GetAll().ToList(), "Id", "Name");
                 _productManager.Add(product);
 
                 return RedirectToAction("Index");

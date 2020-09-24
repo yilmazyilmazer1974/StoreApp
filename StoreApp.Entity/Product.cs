@@ -18,6 +18,7 @@ namespace StoreApp.Entity
         public double Price { get; set; }
         public int Stock { get; set; }
         public string Image { get; set; }
+        public DateTime Date { get; set; }
 
 
         public bool  isApproved { get; set; }
