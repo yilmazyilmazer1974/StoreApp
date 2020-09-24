@@ -1,6 +1,7 @@
 ﻿using StoreApp.Business.Abstract;
 using StoreApp.Business.Manager;
 using StoreApp.Entity;
+using StoreApp.MVCWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,5 +103,19 @@ namespace StoreApp.MVCWebUI.Controllers
                 return View();
             }
         }
+
+        public PartialViewResult CategoryMenu()
+        {
+            var categories = _categoryManager.GetAll().Select(i => new CategoryModel() {
+
+                Id = i.Id,
+                Name = i.Name,
+                ProductCount = i.Products.Count(),
+
+            }).ToList();
+
+            return PartialView(categories);
+        }
+
     }
 }

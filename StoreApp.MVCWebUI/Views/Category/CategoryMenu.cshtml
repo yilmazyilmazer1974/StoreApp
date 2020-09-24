@@ -1,0 +1,21 @@
+﻿
+@using StoreApp.MVCWebUI.Models
+@model IEnumerable<CategoryModel>
+
+
+<div class="widget">
+
+    <h4>Kategoriler</h4>
+
+
+    <ul class="list-unstyled link-list">
+
+        @foreach (var category in Model)
+        {
+            <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="/Product/List/@category.Id">@category.Name <span class="pull-right">(@category.ProductCount)</span></a></li>
+        }
+
+     
+
+    </ul>
+</div>

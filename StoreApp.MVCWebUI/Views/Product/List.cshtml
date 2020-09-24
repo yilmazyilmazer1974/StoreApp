@@ -29,17 +29,9 @@
                 </div>
 
 
-                <div class="widget">
-                    <h4>CATEGORIES</h4>
-                    <ul class="list-unstyled link-list">
-                        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="#">Furniture <span class="pull-right">(5)</span></a></li>
-                        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="#">Electronics <span class="pull-right">(2)</span></a></li>
-                        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="#">Books <span class="pull-right">(1)</span></a></li>
-                        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="#">Accessories <span class="pull-right">(19)</span></a></li>
-                        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="#">Computers <span class="pull-right">(2)</span></a></li>
-                        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="#">Cameras <span class="pull-right">(7)</span></a></li>
-                    </ul>
-                </div>
+                <!--TODO: Buraya Gelecek Category Menu PartialView-->
+
+                @Html.Action("CategoryMenu","Category")
 
                 <div class="widget">
                     <h4>FEATURED</h4>
@@ -131,19 +123,13 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
                     @foreach (var product in Model)
                     {
                         <div class="col-md-4 wow fadeInUp">
                             <div class="text-center product-item">
                                 <div class="product-item-top">
                                     <img alt="" class="img-responsive" src="~/images/tn/@product.Image">
-                                    <div class="mask"></div>                                   
+                                    <div class="mask"></div>
                                     <ul class="list-unstyled list-inline">
                                         <li><a href="/Home/Details/@product.Id"><i class="fa fa-link fa-fw"></i></a></li>
                                         <li><a href="#"><i class="fa fa-cart-plus fa-fw"></i></a></li>
@@ -156,6 +142,12 @@
                             </div>
                         </div>
                     }
+
+
+
+
+
+
 
 
 
