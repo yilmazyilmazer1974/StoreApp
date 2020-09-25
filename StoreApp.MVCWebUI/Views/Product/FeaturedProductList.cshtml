@@ -1,0 +1,28 @@
+﻿
+@using StoreApp.Entity
+@model IEnumerable<Product>
+
+<div class="widget">
+    <h4>FEATURED</h4>
+
+    @foreach (var product in Model)
+    {
+        <div class="products-list">
+
+            <div class="media">
+                <a class="media-left" href="#">
+                    <img alt="" class="img-responsive product-thumb" src="~/images/tn/@product.Image">
+                </a>
+                <div class="media-body">
+                    <a href="/Home/Details/@product.Id" class="product-title">@product.Name</a>
+                    <p class="product-price">@product.Price ₺</p>
+                </div>
+            </div>
+
+
+        </div>
+    }
+
+
+
+</div>

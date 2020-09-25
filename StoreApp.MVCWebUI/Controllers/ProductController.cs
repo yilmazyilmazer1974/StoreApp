@@ -33,13 +33,23 @@ namespace StoreApp.MVCWebUI.Controllers
         }
 
 
-
-
-        public ActionResult List()
+        public ActionResult List(int? id, string q)
         {
-            var products = _productManager.GetAll().Where(i=>i.isApproved==true).OrderByDescending(i=>i.Date).ToList();
+            var products = _productManager.GetAll().Where(i => i.isApproved == true);
 
-            return View(products);
+            if (id!=null)
+            {
+                products = products.Where(s => s.CategoryId == id.Value);
+            }
+
+            if (!string.IsNullOrEmpty(q))
+            {
+                products = products.Where(s => s.Name.Contains(q) || s.Description.Contains(q));
+            }
+
+            var products1 = products.OrderByDescending(i => i.Date).ToList();
+
+            return View(products1);
         }
 
         
@@ -125,6 +135,13 @@ namespace StoreApp.MVCWebUI.Controllers
             {
                 return View();
             }
+        }
+
+        public PartialViewResult FeaturedProductList()
+        {
+            var products = _productManager.GetAll().Where(s=>s.isApproved==true && s.isFeatured==true).OrderByDescending(i=>i.Date).Take(5).ToList();
+
+            return PartialView(products);
         }
     }
 }

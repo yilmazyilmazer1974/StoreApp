@@ -44,23 +44,23 @@ namespace StoreApp.DataAccess.Concrete.EntityFramework
 
             List<Product> products = new List<Product>()
             {
-                new Product(){ Name="Product 1", Description="Description 1",Image="1.jpg",isHome=true, isApproved=true, isFeatured=true,Price=100,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-10)},
+                new Product(){ Name="Product 1 Yılmaz", Description="Description 1",Image="1.jpg",isHome=true, isApproved=true, isFeatured=true,Price=100,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-10)},
 
-                new Product(){ Name="Product 2", Description="Description 2",Image="2.jpg",isHome=true, isApproved=true, isFeatured=true,Price=100,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-20)},
+                new Product(){ Name="Product 2", Description="Description 2 Yılmaz",Image="2.jpg",isHome=true, isApproved=true, isFeatured=true,Price=100,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-20)},
 
-                new Product(){ Name="Product 3", Description="Description 3",Image="3.jpg",isHome=true, isApproved=true, isFeatured=true,Price=250,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-25)},
+                new Product(){ Name="Product 3 Emir", Description="Description 3",Image="3.jpg",isHome=true, isApproved=true, isFeatured=true,Price=250,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-25)},
 
                 new Product(){ Name="Product 4", Description="Description 4",Image="4.jpg",isHome=false, isApproved=true, isFeatured=true,Price=200,Stock=100, CategoryId=1,Date=DateTime.Now.AddDays(-19)},
 
-                new Product(){ Name="Product 5", Description="Description 5",Image="1.jpg",isHome=false, isApproved=true, isFeatured=true,Price=200,Stock=0, CategoryId=1,Date=DateTime.Now.AddDays(-12)},
+                new Product(){ Name="Product 5", Description="Description 5 Emir",Image="1.jpg",isHome=false, isApproved=true, isFeatured=true,Price=200,Stock=0, CategoryId=1,Date=DateTime.Now.AddDays(-12)},
 
                 new Product(){ Name="Product 6", Description="Description 6",Image="2.jpg",isHome=true, isApproved=true, isFeatured=false,Price=300,Stock=100, CategoryId=2,Date=DateTime.Now.AddDays(-15)},
 
-                new Product(){ Name="Product 7", Description="Description 7",Image="3.jpg",isHome=true, isApproved=true, isFeatured=true,Price=300,Stock=100, CategoryId=2,Date=DateTime.Now.AddDays(-14)},
+                new Product(){ Name="Product 7 Sinem", Description="Description 7",Image="3.jpg",isHome=true, isApproved=true, isFeatured=true,Price=300,Stock=100, CategoryId=2,Date=DateTime.Now.AddDays(-14)},
 
                 new Product(){ Name="Product 8", Description="Description 8",Image="4.jpg",isHome=false, isApproved=true, isFeatured=true,Price=350,Stock=0, CategoryId=2,Date=DateTime.Now.AddDays(-25)},
 
-                new Product(){ Name="Product 9", Description="Description 9",Image="1.jpg",isHome=true, isApproved=true, isFeatured=true,Price=100,Stock=100, CategoryId=2,Date=DateTime.Now.AddDays(-24)},
+                new Product(){ Name="Product 9", Description="Description 9 Sinem",Image="1.jpg",isHome=true, isApproved=true, isFeatured=true,Price=100,Stock=100, CategoryId=2,Date=DateTime.Now.AddDays(-24)},
 
                 new Product(){ Name="Product 10", Description="Description 10",Image="2.jpg",isHome=true, isApproved=true, isFeatured=false,Price=500,Stock=100, CategoryId=2,Date=DateTime.Now.AddDays(-60)},
 

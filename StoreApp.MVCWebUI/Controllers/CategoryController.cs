@@ -110,7 +110,7 @@ namespace StoreApp.MVCWebUI.Controllers
 
                 Id = i.Id,
                 Name = i.Name,
-                ProductCount = i.Products.Count(),
+                ProductCount = i.Products.Where(s=>s.isApproved==true).Count(),
 
             }).ToList();
 

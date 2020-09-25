@@ -10,12 +10,14 @@
 
     <ul class="list-unstyled link-list">
 
+        <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="/Product/List/">Tüm Ürünler <span class="pull-right"></span></a></li>
+
         @foreach (var category in Model)
         {
             <li><i class="fa fa-angle-right fa-fw" aria-hidden="true"></i> <a href="/Product/List/@category.Id">@category.Name <span class="pull-right">(@category.ProductCount)</span></a></li>
         }
 
-     
+
 
     </ul>
 </div>
